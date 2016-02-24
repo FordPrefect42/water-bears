@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 print("design character")
 
 Name = input("what is your characters name: ")
