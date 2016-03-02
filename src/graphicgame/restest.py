@@ -4,8 +4,8 @@ import sys
 import pygame
 import os
 
-os.system("xrandr | grep '*' | egrep")
-
+resolution = os.system("xrandr | grep '*'")
+print(resolution)
 
 input("wait")
 
