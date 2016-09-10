@@ -1,4 +1,5 @@
 # Roadmap
-----------
 
-0)FordPrefect has to learn markdown to document stuff good
+Goals
+=====
+1)[FordPrefect](https://github.com/FordPrefect42 "FordPrefect's profile page") has to learn __markdown__ to document stuff good
