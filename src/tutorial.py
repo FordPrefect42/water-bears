@@ -39,7 +39,7 @@ def toggle_fullscreen():
 
 carryOn = True
 clock = pygame.time.Clock()
-x = 1
+#x = 1
 while carryOn:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -52,8 +52,8 @@ while carryOn:
     pygame.display.flip()
 
 
-    if x == 1:
-        print(toggle_fullscreen())
+    #if x == 1:
+        #print(toggle_fullscreen())
         # Doesnt work
 
 
