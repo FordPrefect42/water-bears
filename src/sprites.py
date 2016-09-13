@@ -19,3 +19,18 @@ This is where all sprites to be imported go
 might be made into a package or module later on to save time
 and organize
 """
+
+Blue = (0, 0, 255)
+WHITE = (255, 255, 255)
+class Character(pygame.sprite.Sprite):
+    def __init__(self, pos, img=None, color=Blue):
+        super().__init__()
+        if img:
+            self.image = pygame.image.load(img).convert()
+            self.image.set_colorkey(WHITE)
+        else:
+            self.image = pygame.Surface([20, 20])
+            self.image.fill(color)
+        self.rect = self.image.get_rect()
+        self.rect.x = pos[0]
+        self.rect.y = pos[1]
