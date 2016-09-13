@@ -10,5 +10,4 @@ pygame.quit()
 #res = resolution
 #size = width, height = (res.current_w, res.current_h)
 print(resolution)
-
 sys.exit(0)
