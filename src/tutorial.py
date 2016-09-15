@@ -3,6 +3,7 @@
 import sys
 import pygame
 #from pygame.locals import *
+from vars import variables
 import sprites
 
 __appname__    = "Water Bears"
@@ -10,7 +11,7 @@ __author__     = "Marco Sirabella"
 __copyright__  = ""
 __credits__    = "Marco Sirabella, Christopher Adams, Foo Bar"
 __license__    = ""
-__version__    = "0.1.0"
+__version__    = "0.0.1"
 __maintainers__= "Marco Sirabella, Christopher Adams"
 __email__      = "msirabel@gmail.com"
 __status__     = "Prototype"
@@ -20,7 +21,9 @@ __module__     = ""
 pygame.init()
 res = pygame.display.Info()
 screen_width = res.current_w
+variables.screen_width = screen_width
 screen_height = res.current_h
+variables.screen_height = screen_height
 size = width, height = (screen_width, screen_height)
 speed = [2, 2]
 black = 0, 0, 0
@@ -100,31 +103,14 @@ while carryOn:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             carryOn = False
+    if pygame.key.get_pressed()[pygame.K_ESCAPE]:
+        carryOn = False
 
-    keystrokes()
-    keys=pygame.key.get_pressed()
-    #if event.type == pygame.KEYDOWN and not keys[pygame.K_LEFT]:
-        #print('key not l pressed')
-    #elif event.type == pygame.KEYDOWN and keys[pygame.K_LEFT]:
-        #print('both pressed')
-    #if event.type == pygame.KEYDOWN:
-
-        #if keys[pygame.K_LEFT] or keys[pygame.K_a]:
-            #print('LEFT')
-            #ch.rect.x -= 10
-
-    if ch.rect.x < 0:
-        ch.rect.x = screen_width# - 1
-    if ch.rect.x > screen_width:
-        ch.rect.x = 0# + 1
-    if ch.rect.y < 0:
-        ch.rect.y = screen_height# - 1
-    if ch.rect.y > screen_height:
-        ch.rect.y = 0# + 1
 
 
     screen.fill((0, 0, 0))
     ch.tick(screen)
+    """ Replaced by sprite tick definition """
     #all_sprites_list.draw(screen)
     pygame.display.flip()
 

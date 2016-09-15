@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import pygame
+from vars import variables
 
 __appname__    = "Water Bears"
 __author__     = "Marco Sirabella"
 __copyright__  = ""
 __credits__    = "Marco Sirabella, Christopher Adams, Foo Bar"
 __license__    = ""
-__version__    = "0.1.0"
+__version__    = "0.0.1"
 __maintainers__= "Marco Sirabella, Christopher Adams"
 __email__      = "msirabel@gmail.com"
 __status__     = "Prototype"
@@ -35,10 +36,14 @@ class Character(pygame.sprite.Sprite):
         self.rect.x = pos[0]
         self.rect.y = pos[1]
     def tick(self, screen):
+        screen_width = variables.screen_width
         sprites_list = pygame.sprite.Group()
         sprites_list.add(self)
         sprites_list.draw(screen)
         keys=pygame.key.get_pressed()
+
+        """
+        Key Input for movement"""
         if keys[pygame.K_LEFT] or keys[pygame.K_a]:
             #print('LEFT')
             self.rect.x -= 10
@@ -49,3 +54,14 @@ class Character(pygame.sprite.Sprite):
             self.rect.y -= 10
         if keys[pygame.K_DOWN] or keys[pygame.K_s]:
             self.rect.y += 10
+
+        """
+        Screen looping"""
+        if self.rect.x < 0:
+            self.rect.x = variables.screen_width# - 1
+        if self.rect.x > variables.screen_width:
+            self.rect.x = 0# + 1
+        if self.rect.y < 0:
+            self.rect.y = variables.screen_height# - 1
+        if self.rect.y > variables.screen_height:
+            self.rect.y = 0# + 1
