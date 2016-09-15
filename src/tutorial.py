@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
-import pygame
 #from pygame.locals import *
-import vars
 import sprites
 
 __appname__    = "Water Bears"
@@ -17,6 +15,7 @@ __email__      = "msirabel@gmail.com"
 __status__     = "Prototype"
 __module__     = ""
 
+pygame = sprites.pygame
 
 #pygame.init()
 #res = pygame.display.Info()
@@ -27,7 +26,8 @@ __module__     = ""
 #    screen = pygame.display.set_mode((variables.size), pygame.FULLSCREEN)
 #else:
 #    screen = pygame.display.set_mode((variables.size))
-variables = vars.variables()
+#variables = vars.variables()
+variables = sprites.variables
 
 def toggle_fullscreen():
     """ From http://pygame.org/wiki/toggle_fullscreen """

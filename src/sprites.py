@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import pygame
-from vars import variables
+import vars
 
 __appname__    = "Water Bears"
 __author__     = "Marco Sirabella"
@@ -20,6 +19,8 @@ This is where all sprites to be imported go
 might be made into a package or module later on to save time
 and organize
 """
+pygame = vars.pygame
+variables = vars.variables()
 
 Blue = (0, 0, 255)
 WHITE = (255, 255, 255)
