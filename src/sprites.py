@@ -36,7 +36,6 @@ class Character(pygame.sprite.Sprite):
         self.rect.x = pos[0]
         self.rect.y = pos[1]
     def tick(self, screen):
-        screen_width = variables.screen_width
         sprites_list = pygame.sprite.Group()
         sprites_list.add(self)
         sprites_list.draw(screen)

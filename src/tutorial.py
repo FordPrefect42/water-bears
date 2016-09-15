@@ -3,7 +3,7 @@
 import sys
 import pygame
 #from pygame.locals import *
-from vars import variables
+import vars
 import sprites
 
 __appname__    = "Water Bears"
@@ -18,15 +18,16 @@ __status__     = "Prototype"
 __module__     = ""
 
 
-pygame.init()
-res = pygame.display.Info()
-variables.screen_width = res.current_w
-variables.screen_height = res.current_h
-variables.size = width, height = (variables.screen_width, variables.screen_height)
-if variables.fullscreen:
-    screen = pygame.display.set_mode((variables.size), pygame.FULLSCREEN)
-else:
-    screen = pygame.display.set_mode((variables.size))
+#pygame.init()
+#res = pygame.display.Info()
+#variables.screen_width = res.current_w
+#variables.screen_height = res.current_h
+#variables.size = width, height = (variables.screen_width, variables.screen_height)
+#if variables.fullscreen:
+#    screen = pygame.display.set_mode((variables.size), pygame.FULLSCREEN)
+#else:
+#    screen = pygame.display.set_mode((variables.size))
+variables = vars.variables()
 
 def toggle_fullscreen():
     """ From http://pygame.org/wiki/toggle_fullscreen """
@@ -101,8 +102,8 @@ while carryOn:
 
 
 
-    screen.fill((0, 0, 0))
-    ch.tick(screen)
+    variables.screen.fill((0, 0, 0))
+    ch.tick(variables.screen)
     """ Replaced by sprite tick definition """
     #all_sprites_list.draw(screen)
     pygame.display.flip()

@@ -16,11 +16,19 @@ __module__     = ""
 
 class variables(object):
     res = None
-    screen_width = None
-    screen_height = None
     size = None
     speed = [2, 2]
     black = 0, 0, 0
     orange = 255, 255, 0
     fullscreen = False
     screen = None
+    def __init__(self):
+        pygame.init()
+        self.res = pygame.display.Info()
+        self.screen_width = self.res.current_w
+        self.screen_height = self.res.current_h
+        self.size = width, height = (self.screen_width, self.screen_height)
+        if self.fullscreen:
+            self.screen = pygame.display.set_mode((self.size), pygame.FULLSCREEN)
+        else:
+            self.screen = pygame.display.set_mode((self.size))
