@@ -20,20 +20,13 @@ __module__     = ""
 
 pygame.init()
 res = pygame.display.Info()
-screen_width = res.current_w
-variables.screen_width = screen_width
-screen_height = res.current_h
-variables.screen_height = screen_height
-size = width, height = (screen_width, screen_height)
-speed = [2, 2]
-black = 0, 0, 0
-orange = 255, 255, 0
-fullscreen = False
-#fullscreen = True
-if fullscreen:
-    screen = pygame.display.set_mode((size), pygame.FULLSCREEN)
+variables.screen_width = res.current_w
+variables.screen_height = res.current_h
+variables.size = width, height = (variables.screen_width, variables.screen_height)
+if variables.fullscreen:
+    screen = pygame.display.set_mode((variables.size), pygame.FULLSCREEN)
 else:
-    screen = pygame.display.set_mode((size))
+    screen = pygame.display.set_mode((variables.size))
 
 def toggle_fullscreen():
     """ From http://pygame.org/wiki/toggle_fullscreen """
@@ -94,9 +87,9 @@ def mid(beg, end):
     s = beg + end
     return (s / 2)
 
-pos = (mid(0, screen_width), mid(0, screen_height))
+pos = (mid(0, variables.screen_width), mid(0, variables.screen_height))
 print(pos)
-ch = sprites.Character(pos, color=orange)
+ch = sprites.Character(pos, color=variables.orange)
 all_sprites_list.add(ch)
 
 while carryOn:
