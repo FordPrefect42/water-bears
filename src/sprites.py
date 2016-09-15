@@ -34,3 +34,18 @@ class Character(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = pos[0]
         self.rect.y = pos[1]
+    def tick(self, screen):
+        sprites_list = pygame.sprite.Group()
+        sprites_list.add(self)
+        sprites_list.draw(screen)
+        keys=pygame.key.get_pressed()
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
+            #print('LEFT')
+            self.rect.x -= 10
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
+            self.rect.x += 10
+        if keys[pygame.K_UP] or keys[pygame.K_w]:
+            #print('LEFT')
+            self.rect.y -= 10
+        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
+            self.rect.y += 10
