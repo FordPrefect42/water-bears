@@ -6,7 +6,7 @@ let nVars = {
  \"copyright" : "", 
  \"credits" : name . ", " . cj,
  \"license" : "", 
- \"version" : "0.0.0", 
+ \"version" : "0.0.1", 
  \"maintainers" : name . ", " . cj,
  \"email" : 'msirabel@gmail.com', 
  \"status" : "Prototype", 
