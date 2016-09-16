@@ -16,18 +16,18 @@ __status__     = "Prototype"
 __module__     = ""
 
 pygame = sprites.pygame
+v = sprites.v
 
-#pygame.init()
-#res = pygame.display.Info()
-#variables.screen_width = res.current_w
-#variables.screen_height = res.current_h
-#variables.size = width, height = (variables.screen_width, variables.screen_height)
-#if variables.fullscreen:
-#    screen = pygame.display.set_mode((variables.size), pygame.FULLSCREEN)
-#else:
-#    screen = pygame.display.set_mode((variables.size))
-#variables = vars.variables()
-variables = sprites.variables
+pygame.init()
+v.res = pygame.display.Info()
+v.screen_width = v.res.current_w
+v.screen_height = v.res.current_h
+v.size = width, height = (v.screen_width, v.screen_height)
+#v.fullscreen = False
+if v.fullscreen:
+    v.screen = pygame.display.set_mode((v.size), pygame.FULLSCREEN)
+else:
+    v.screen = pygame.display.set_mode((v.size))
 
 def toggle_fullscreen():
     """ From http://pygame.org/wiki/toggle_fullscreen """
@@ -59,7 +59,7 @@ def keystrokes():
     keys=pygame.key.get_pressed()
     # This causes some weird things to happen
     #if event.type == pygame.KEYDOWN:
-    if 1:
+    if v.fullscreen:
         if keys[pygame.K_ESCAPE]:
             carryOn = False
     else:
@@ -88,9 +88,8 @@ def mid(beg, end):
     s = beg + end
     return (s / 2)
 
-pos = (mid(0, variables.screen_width), mid(0, variables.screen_height))
-print(pos)
-ch = sprites.Character(pos, color=variables.orange)
+v.pos = (mid(0, v.screen_width), mid(0, v.screen_height))
+ch = sprites.Character(v.pos, color=v.yellow)
 all_sprites_list.add(ch)
 
 while carryOn:
@@ -102,8 +101,8 @@ while carryOn:
 
 
 
-    variables.screen.fill((0, 0, 0))
-    ch.tick(variables.screen)
+    v.screen.fill((0, 0, 0))
+    ch.tick()
     """ Replaced by sprite tick definition """
     #all_sprites_list.draw(screen)
     pygame.display.flip()

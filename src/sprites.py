@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import vars
+import variables as v
 
 __appname__    = "Water Bears"
 __author__     = "Marco Sirabella"
@@ -19,8 +19,8 @@ This is where all sprites to be imported go
 might be made into a package or module later on to save time
 and organize
 """
-pygame = vars.pygame
-variables = vars.variables()
+
+pygame = v.pygame
 
 Blue = (0, 0, 255)
 WHITE = (255, 255, 255)
@@ -36,32 +36,32 @@ class Character(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = pos[0]
         self.rect.y = pos[1]
-    def tick(self, screen):
+    def tick(self):
         sprites_list = pygame.sprite.Group()
         sprites_list.add(self)
-        sprites_list.draw(screen)
+        sprites_list.draw(v.screen)
         keys=pygame.key.get_pressed()
 
-        """
-        Key Input for movement"""
+        """Key Input for movement"""
         if keys[pygame.K_LEFT] or keys[pygame.K_a]:
             #print('LEFT')
             self.rect.x -= 10
+            self.image.fill(v.blue)
         if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             self.rect.x += 10
+            self.image.fill(v.orange)
         if keys[pygame.K_UP] or keys[pygame.K_w]:
             #print('LEFT')
             self.rect.y -= 10
         if keys[pygame.K_DOWN] or keys[pygame.K_s]:
             self.rect.y += 10
 
-        """
-        Screen looping"""
+        """Screen looping"""
         if self.rect.x < 0:
-            self.rect.x = variables.screen_width# - 1
-        if self.rect.x > variables.screen_width:
+            self.rect.x = v.screen_width# - 1
+        if self.rect.x > v.screen_width:
             self.rect.x = 0# + 1
         if self.rect.y < 0:
-            self.rect.y = variables.screen_height# - 1
-        if self.rect.y > variables.screen_height:
+            self.rect.y = v.screen_height# - 1
+        if self.rect.y > v.screen_height:
             self.rect.y = 0# + 1
