@@ -36,10 +36,10 @@ class Character(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = pos[0]
         self.rect.y = pos[1]
+        self.sprites_list = pygame.sprite.Group()
+        self.sprites_list.add(self)
     def tick(self):
-        sprites_list = pygame.sprite.Group()
-        sprites_list.add(self)
-        sprites_list.draw(v.screen)
+        self.sprites_list.draw(v.screen)
         keys=pygame.key.get_pressed()
 
         """Key Input for movement"""
