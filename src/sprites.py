@@ -44,14 +44,12 @@ class Character(pygame.sprite.Sprite):
 
         """Key Input for movement"""
         if keys[pygame.K_LEFT] or keys[pygame.K_a]:
-            #print('LEFT')
             self.rect.x -= 10
             self.image.fill(v.blue)
         if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             self.rect.x += 10
             self.image.fill(v.orange)
         if keys[pygame.K_UP] or keys[pygame.K_w]:
-            #print('LEFT')
             self.rect.y -= 10
         if keys[pygame.K_DOWN] or keys[pygame.K_s]:
             self.rect.y += 10

@@ -7,11 +7,11 @@ import sprites
 __appname__    = "Water Bears"
 __author__     = "Marco Sirabella"
 __copyright__  = ""
-__credits__    = "Marco Sirabella, Christopher Adams, Foo Bar"
+__credits__    = "Marco Sirabella, Christopher Adams"
 __license__    = ""
 __version__    = "0.0.1"
 __maintainers__= "Marco Sirabella, Christopher Adams"
-__email__      = "msirabel@gmail.com"
+__email__      = "msirabel@gmail.com, yaakovred@gmail.com"
 __status__     = "Prototype"
 __module__     = ""
 
