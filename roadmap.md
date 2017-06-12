@@ -11,8 +11,8 @@ Goals
 3) Must find better game name
 
 4) CJ's tasks
-	a) controls
-	b) Menues
+    - controls
+    - Menues
 5) Vincezzeszzzzsesszz tasks
-	a) procedrual generation
-	b) Scene Changes
+    - procedrual generation
+    - Scene Changes
